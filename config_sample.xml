@@ -1,0 +1,7 @@
+<config		network-svg	="ABSOLUTE PATH TO GEPHI TAGCLOUD SVG FILE"
+		image-folder	="ABSOLUTE PATH TO IMAGE FOLDER"
+		output-pdf	="ABSOLUTE PATH AND FILE NAME FOR PDF OUTPUT"
+		output-width 	="WIDTH OF THE PDF OUTPUT"
+		output-height	="HEIGHT OF THE PDF OUTPUT"		
+		image-width	="WIDTH TO RESIZE THE IMAGES">	 
+</config>
