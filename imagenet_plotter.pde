@@ -16,6 +16,8 @@ float   imgRealW;
 
 XML[]   allImages;
 
+int     drawnImages;
+
 PImage  curImg;
 
 void settings() {
@@ -27,7 +29,7 @@ void settings() {
      PDFOutputHeight = configXml.getInt("output-height");
      imgRealW      = configXml.getFloat("image-real-width");
      imgDrawW      = configXml.getFloat("image-draw-width");
-     
+     drawnImages = 0;
      size(PDFOutputWidth, PDFOutputHeight, PDF, PDFOutputPath);
 }
 
@@ -59,6 +61,8 @@ void setup() {
 
 void draw() {
    for(int i=0; i < allImages.length; i++) {
+     if(fileExists(imageFolderPath + trim(allImages[i].getContent()))) {
+      drawnImages++;
       curImg = loadImage(imageFolderPath + trim(allImages[i].getContent()));
       curImg.resize(int(imgRealW),0);
       imgDrawH = curImg.height * (imgDrawW/curImg.width);
@@ -66,6 +70,20 @@ void draw() {
       float imgDrawY = map(allImages[i].getFloat("y"),minY, maxY, 0, height);
       image(curImg, imgDrawX, imgDrawY, imgDrawW, imgDrawH);
       println("Drawing image " + i + " of " + allImages.length + ".");
+     }
    }
+   println("Images drawn: " + drawnImages);
    exit();
+}
+
+boolean fileExists(String filename) {
+
+ File file = new File(filename);
+
+ if(!file.exists()) {
+  return false;
+ }
+ else {   
+ return true;
+ }
 }
