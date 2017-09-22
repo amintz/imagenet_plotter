@@ -2,6 +2,8 @@
 		image-folder	="ABSOLUTE PATH TO IMAGE FOLDER"
 		output-pdf	="ABSOLUTE PATH AND FILE NAME FOR PDF OUTPUT"
 		output-width 	="WIDTH OF THE PDF OUTPUT"
-		output-height	="HEIGHT OF THE PDF OUTPUT"		
-		image-width	="WIDTH TO RESIZE THE IMAGES">	 
+		output-height 	="HEIGHT OF THE PDF OUTPUT"		
+		image-real-width="WIDTH TO RESIZE THE IMAGES"
+		image-draw-width="WIDTH TO DRAW THE IMAGES"
+>	 
 </config>
